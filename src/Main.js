@@ -4,6 +4,7 @@ import PageNotFound from './Pages/PageNotFound'
 import Home from './Pages/Home'
 import DVD from './Pages/DVD'
 import ImgVids from './ImgVids/ImgVids';
+import WhensMelee from './WhensMelee/WhensMelee';
 
 const Main = () => {
   return (
@@ -11,6 +12,7 @@ const Main = () => {
       <Route exact path='/' component={Home}/>
       <Route path='/dvd' component={DVD}/>
       <Route path='/imgvids' component={ImgVids}/>
+      <Route path='/whensmelee' component={WhensMelee}/>
       <Route component={PageNotFound}/>
     </Switch>
   );

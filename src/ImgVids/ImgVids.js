@@ -1,8 +1,5 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import Video from './Video'
-
-
-
 
 const ImgVids = () => {
     const [searchOptions, setSearchOptions] = useState("relevance");
@@ -39,21 +36,21 @@ const ImgVids = () => {
     }
 
     return(
-    <div className = "img-vids">
-        <button style={{float: "right"}} id="darkSwitch">dark mode</button>
-        <center>
-            <br />
-            <h1 className="text">IMG #### video finder</h1>
-            <button onClick={() => {findVideo(searchOptions)}}>find new video</button>
-            <select id="searchOptions">
-                <option value="relevance" onSelect={() => {setSearchOptions("relevance")}}>relevant</option>
-                <option value="date" onSelect={() => {setSearchOptions("date")}}>newest</option>
-            </select>
-
-            <Video url={vidUrl} title={vidTitle}/>
-            <script src="./App.js" />
-        </center>
-    </div>
+        <div className = "img-vids">
+            <button style={{float: "right"}} id="darkSwitch">dark mode</button>
+            <center>
+                <br />
+                <h1 className="text">IMG #### video finder</h1>
+                <button onClick={() => {findVideo(searchOptions)}}>find new video</button>
+                <select id="searchOptions">
+                    <option value="relevance" onSelect={() => {setSearchOptions("relevance")}}>relevant</option>
+                    <option value="date" onSelect={() => {setSearchOptions("date")}}>newest</option>
+                </select>
+            
+                <Video url={vidUrl} title={vidTitle}/>
+                <script src="./App.js" />
+            </center>
+        </div>
     );
 }
 
