@@ -23,8 +23,7 @@ const WhensMelee = () => {
 			slug
 			numAttendees
 			startAt
-			endAt
-			venueName
+			images{url}
 		  }
 		}
 	  }`;
@@ -48,7 +47,7 @@ const WhensMelee = () => {
 	const TournamentsToList = (tournaments) => {
 
 		let JSX = tournaments.map((tournament) => {
-			return(<TournamentCard tournament={tournament} />);
+			return(<TournamentCard tournament={tournament} key={tournament.id}/>);
 		});
 		
 		return JSX;
