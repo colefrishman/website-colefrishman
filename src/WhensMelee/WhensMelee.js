@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react';
+import Container from '@material-ui/core/Container';
 import TournamentCard from './TournamentCard'
 
 const WhensMelee = () => {
@@ -34,7 +35,7 @@ const WhensMelee = () => {
 			headers: {
 			  'Content-Type': 'application/json',
 			  'Accept': 'application/json',
-			  'authorization': 'Bearer 45a7257fc0ac8d48d52d70218b192599'
+			  'authorization': `Bearer ${process.env.REACT_APP_SMASHGG_API_KEY}`
 			},
 			body: JSON.stringify({
 			  query
@@ -58,10 +59,10 @@ const WhensMelee = () => {
 	}, [])
 
 	return(
-		<div>
+		<Container maxWidth="lg" style={{backgroundColor: "FFDDCC", paddingBottom: "10px"}}>
 			<h1>Who's Melee?</h1>
 			{TournamentsToList(tournamentsList)}
-		</div>
+		</Container>
 	);
 }
 
