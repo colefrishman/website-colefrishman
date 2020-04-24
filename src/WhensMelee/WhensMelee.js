@@ -18,16 +18,24 @@ const WhensMelee = () => {
 			published: true
 		  }
 		}) {
-		  nodes {
-			id
-			name
-			slug
-			numAttendees
-			startAt
-			images{url}
-		  }
+			nodes {
+				id
+				name
+				slug
+				startAt
+				endAt
+				images{url}
+				events{
+				  id
+				  videogame {
+					id
+				  }
+				}
+			  }
 		}
 	  }`;
+
+	  
 
 	const fetchTournaments = () => {
 		fetch('https://api.smash.gg/gql/alpha', {
