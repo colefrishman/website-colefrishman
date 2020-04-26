@@ -79,7 +79,7 @@ const TournamentCard = (props) => {
 				<ExpansionPanelSummary expandIcon={<ArrowDropDownCircleOutlinedIcon />} >
 					{getIconImage()}
 					<div style={{display: "block", marginLeft: "20px"}}>
-						<h3 style={{display: "flex", alignItems: "center"}}>{tournament.name}</h3>
+						<h3 style={{alignItems: "center"}}>{tournament.name}</h3>
 						<p>Starts: {(new Date(tournament.startAt*1000)).toString()}</p>
 					</div>
 				</ExpansionPanelSummary>
