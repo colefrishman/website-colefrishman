@@ -31,6 +31,13 @@ const WhensMelee = () => {
 			  numAttendees
 			  startAt
 			  endAt
+			  venueAddress
+			  hasOfflineEvents
+			  hasOnlineEvents
+			  streams{
+				streamSource
+				streamName
+			  }
 			  images{url}
 			  participants(query: {
 				

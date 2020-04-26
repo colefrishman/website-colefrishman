@@ -4,6 +4,11 @@ import ExpansionPanel from '@material-ui/core/ExpansionPanel';
 import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
 import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
 import ArrowDropDownCircleOutlinedIcon from '@material-ui/icons/ArrowDropDownCircleOutlined';
+import RoomIcon from '@material-ui/icons/Room';
+import Avatar from '@material-ui/core/Avatar';
+import LanguageIcon from '@material-ui/icons/Language';
+import { Icon, InlineIcon } from '@iconify/react';
+import twitchIcon from '@iconify/icons-mdi/twitch';
 import { MELEE_ID } from './values'
 
 const TournamentCard = (props) => {
@@ -67,11 +72,47 @@ const TournamentCard = (props) => {
 		//Gets the first image for the torunament (if one exists)
 		const getIconImage = () => {
 			if(tournament.images[0]){
-				return(<img src={tournament.images[0].url} alt={tournament.name} height="100px" width="100px"/>);
+				return(<Avatar variant="rounded" style={{height:"100px", width:"100px"}}><img src={tournament.images[0].url} alt={tournament.name} height="100px" width="100px"/></Avatar>);
 			}
 			else{
 				return <span style={{height:"100px", width:"100px"}}/>;
 			}
+		}
+
+		const getStreams = () => {
+			if(!tournament.streams){
+				return('')
+			}
+			const streams = (tournament.streams.map(stream => {
+				return(<>{" "}<a href={`https://twitch.tv/${stream.streamName}`} >{stream.streamName}</a></>)
+			}));
+			return(
+				<div>
+					<Icon icon={twitchIcon} />
+					{streams}
+				</div>
+			);
+		}
+
+		const getLocation = () => {
+			let address = [];
+			if(tournament.hasOnlineEvents){
+				address.push(<LanguageIcon />, " Online");
+			}
+			if(tournament.hasOfflineEvents){
+				if(address.length>1){
+					address.push(", ")
+				}
+				address.push(<RoomIcon />);
+			}
+			if(tournament.venueAddress){
+				if(address.length === 2){
+					address.push(", ")
+				}
+				address.push(` ${tournament.venueAddress}`);
+			}
+			console.log(tournament)
+			return address;
 		}
 
 		return(
@@ -84,9 +125,11 @@ const TournamentCard = (props) => {
 					</div>
 				</ExpansionPanelSummary>
 				<ExpansionPanelDetails style={{display: "block"}}>
+					{getLocation()}
+					{getStreams()}
 					{getAttendeesCount()}
-					<Button href={`https://smash.gg/${tournament.slug}`} variant="contained" color="secondary">View on Smash.gg</Button>
 					<p>{getAttendeeNames(10)}</p>
+					<Button href={`https://smash.gg/${tournament.slug}`} variant="contained" color="secondary">View on Smash.gg</Button>
 					<br />
 				</ExpansionPanelDetails>
 			</ExpansionPanel>
