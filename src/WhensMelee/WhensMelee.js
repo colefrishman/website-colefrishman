@@ -1,7 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import Container from '@material-ui/core/Container';
 import CircularProgress from '@material-ui/core/CircularProgress';
-import TournamentCard from './TournamentCard';
 import TournamentsList from './TorunamentsList'
 import { MELEE_ID } from './values';
 
@@ -19,8 +18,8 @@ const WhensMelee = () => {
 			videogameIds: [
 			  ${MELEE_ID}
 			],
-			afterDate: ${Math.floor((new Date().getTime())/1000)},
-			beforeDate: ${Math.floor((new Date().getTime())/1000)+3600*24*10},
+			afterDate: ${Math.floor((new Date().getTime())/1000)-(3600*24*0)},
+			beforeDate: ${Math.floor((new Date().getTime())/1000)+(3600*24*10)},
 			published: true
 		  }
 		}) {
@@ -31,6 +30,7 @@ const WhensMelee = () => {
 			  numAttendees
 			  startAt
 			  endAt
+			  state
 			  venueAddress
 			  hasOfflineEvents
 			  hasOnlineEvents
@@ -98,9 +98,11 @@ const WhensMelee = () => {
 
 	return(
 		<Container maxWidth="lg" style={{backgroundColor: "FFDDCC", paddingBottom: "10px"}}>
-			<h1>When's Melee?</h1>
+			<br />
+			<h1 style={{textAlign: "center"}}>When's Melee?</h1>
+			<br />
 			<TournamentsList tournaments={tournamentsList}/>
-			<CircularProgress color="secondary" style={{display: loadingStyle(loading)}}/>
+			<CircularProgress color="secondary" style={{display: loadingStyle(loading), marginLeft: "auto", marginRight: "auto"}}/>
 		</Container>
 	);
 }

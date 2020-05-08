@@ -4,17 +4,16 @@ import ExpansionPanel from '@material-ui/core/ExpansionPanel';
 import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
 import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
 import ArrowDropDownCircleOutlinedIcon from '@material-ui/icons/ArrowDropDownCircleOutlined';
+import SvgIcon from '@material-ui/core/SvgIcon';
 import RoomIcon from '@material-ui/icons/Room';
 import Avatar from '@material-ui/core/Avatar';
 import LanguageIcon from '@material-ui/icons/Language';
-import { Icon, InlineIcon } from '@iconify/react';
-import twitchIcon from '@iconify/icons-mdi/twitch';
+
 import { MELEE_ID } from './values'
 
 const TournamentCard = (props) => {
 	const tournament = props.tournament;
 	let meleeAttendees = [];
-	console.log("card updated")
 
 	//Adds a particpant to meleeAttendees if the player is registered for melee
 	if(tournament.participants.nodes){
@@ -84,11 +83,13 @@ const TournamentCard = (props) => {
 				return('')
 			}
 			const streams = (tournament.streams.map(stream => {
-				return(<>{" "}<a href={`https://twitch.tv/${stream.streamName}`} >{stream.streamName}</a></>)
+				return(<em>{" "}<a href={`https://twitch.tv/${stream.streamName}`} style={{color: "black"}}>{stream.streamName}</a></em>)
 			}));
 			return(
 				<div>
-					<Icon icon={twitchIcon} />
+					<SvgIcon htmlColor="DARKSLATEBLUE" fontSize="inherit">
+						<svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>Twitch icon</title><path d="M11.571 4.714h1.715v5.143H11.57zm4.715 0H18v5.143h-1.714zM6 0L1.714 4.286v15.428h5.143V24l4.286-4.286h3.428L22.286 12V0zm14.571 11.143l-3.428 3.428h-3.429l-3 3v-3H6.857V1.714h13.714Z"/></svg>
+					</SvgIcon>
 					{streams}
 				</div>
 			);
@@ -97,13 +98,13 @@ const TournamentCard = (props) => {
 		const getLocation = () => {
 			let address = [];
 			if(tournament.hasOnlineEvents){
-				address.push(<LanguageIcon />, " Online");
+				address.push(<LanguageIcon fontSize="inherit" htmlColor="darkblue" />, " Online");
 			}
 			if(tournament.hasOfflineEvents){
 				if(address.length>1){
 					address.push(", ")
 				}
-				address.push(<RoomIcon />);
+				address.push(<RoomIcon fontSize="inherit" htmlColor="darkgreen"/>);
 			}
 			if(tournament.venueAddress){
 				if(address.length === 2){
@@ -111,7 +112,6 @@ const TournamentCard = (props) => {
 				}
 				address.push(` ${tournament.venueAddress}`);
 			}
-			console.log(tournament)
 			return address;
 		}
 

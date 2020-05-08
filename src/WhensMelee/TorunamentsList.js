@@ -1,6 +1,4 @@
-import React, {useState, useEffect} from 'react';
-import Container from '@material-ui/core/Container';
-import CircularProgress from '@material-ui/core/CircularProgress';
+import React, {} from 'react';
 import TournamentCard from './TournamentCard';
 
 const TournamentsList = (props) => {
