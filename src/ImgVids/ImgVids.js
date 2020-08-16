@@ -37,7 +37,6 @@ const ImgVids = () => {
 
     return(
         <div className = "img-vids">
-            <button style={{float: "right"}} id="darkSwitch">dark mode</button>
             <center>
                 <br />
                 <h1 className="text">IMG #### video finder</h1>

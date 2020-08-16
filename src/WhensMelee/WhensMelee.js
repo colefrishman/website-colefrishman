@@ -18,8 +18,8 @@ const WhensMelee = () => {
 			videogameIds: [
 			  ${MELEE_ID}
 			],
-			afterDate: ${Math.floor((new Date().getTime())/1000)-(3600*24*0)},
-			beforeDate: ${Math.floor((new Date().getTime())/1000)+(3600*24*10)},
+			afterDate: ${Math.floor((new Date().getTime())/1000-3600*24*1)},
+			beforeDate: ${Math.floor((new Date().getTime())/1000+3600*24*10)},
 			published: true
 		  }
 		}) {
