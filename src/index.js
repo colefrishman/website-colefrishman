@@ -9,7 +9,6 @@ import DarkModeButton from './Utils/DarkMode'
 ReactDOM.render(
     <BrowserRouter>
         <Main />
-        <DarkModeButton />
     </BrowserRouter>,
   document.getElementById('root')
 );
