@@ -5,9 +5,13 @@ import Home from './Pages/Home'
 import DVD from './Pages/DVD'
 import ImgVids from './ImgVids/ImgVids';
 import WhensMelee from './WhensMelee/WhensMelee';
+import NavBar from './Components/NavBar';
 
 const Main = () => {
   return (
+    <>
+    
+    <NavBar />
     <Switch>
       <Route exact path='/' component={Home}/>
       <Route path='/dvd' component={DVD}/>
@@ -15,6 +19,7 @@ const Main = () => {
       <Route path='/whensmelee' component={WhensMelee}/>
       <Route component={PageNotFound}/>
     </Switch>
+    </>
   );
 }
 

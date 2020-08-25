@@ -2,8 +2,8 @@ import React from 'react';
 
 const Home = () => {
     return(
-        <h1>
-            Colefrishman.com
+        <h1 style={{marginRight: "auto", marginLeft: "auto", textAlign: "center"}}>
+            Cole Frishman
         </h1>
     );
 }
