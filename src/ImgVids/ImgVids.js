@@ -1,5 +1,7 @@
 import React, {useState} from 'react';
 import Video from './Video'
+import Button from '@material-ui/core/Button';
+import NavBar from '../Components/NavBar';
 
 const ImgVids = () => {
     const [searchOptions, setSearchOptions] = useState("relevance");
@@ -37,10 +39,11 @@ const ImgVids = () => {
 
     return(
         <div className = "img-vids">
+            <NavBar />
             <center>
                 <br />
                 <h1 className="text">IMG #### video finder</h1>
-                <button onClick={() => {findVideo(searchOptions)}}>find new video</button>
+                <Button onClick={() => {findVideo(searchOptions)}} style={{backgroundColor:"#FF0000", color:"#FFFFFF", marginRight:"1%"}}>find new video</Button> 
                 <select id="searchOptions">
                     <option value="relevance" onSelect={() => {setSearchOptions("relevance")}}>relevant</option>
                     <option value="date" onSelect={() => {setSearchOptions("date")}}>newest</option>

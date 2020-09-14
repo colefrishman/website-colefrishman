@@ -9,17 +9,14 @@ import NavBar from './Components/NavBar';
 
 const Main = () => {
   return (
-    <>
-    
-    <NavBar />
     <Switch>
       <Route exact path='/' component={Home}/>
+      <Route exact path='/home' component={Home}/>
       <Route path='/dvd' component={DVD}/>
       <Route path='/imgvids' component={ImgVids}/>
       <Route path='/whensmelee' component={WhensMelee}/>
       <Route component={PageNotFound}/>
     </Switch>
-    </>
   );
 }
 

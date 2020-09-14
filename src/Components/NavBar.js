@@ -23,12 +23,12 @@ const NavBar = (props) => {
 			keepMounted
 			>
 
+			<MenuItem ><Link href="/home">Home</Link></MenuItem>
 			<MenuItem ><Link href="/whensmelee">When's Melee?</Link></MenuItem>
 			<MenuItem ><Link href="/imgvids">IMG #### video finder</Link></MenuItem>
 			<MenuItem ><Link href="/dvd">DVD</Link></MenuItem>
 		</Menu>
-		<h3 style={{display:"inline", marginLeft: "auto", marginRight: "auto", width: "50%"}}><Link href="/">Cole Frishman</Link></h3>
-		<Button onClick={handleClick}><MenuIcon/>Toys</Button>
+		<Button onClick={handleClick}><MenuIcon/>Navigate</Button>
 	</div>
 	);
 }

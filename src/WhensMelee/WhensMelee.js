@@ -3,6 +3,7 @@ import Container from '@material-ui/core/Container';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import TournamentsList from './TorunamentsList'
 import { MELEE_ID } from './values';
+import NavBar from '../Components/NavBar';
 
 const WhensMelee = () => {
 	const [tournamentsList, setTournamentsList] = useState([]);
@@ -90,7 +91,7 @@ const WhensMelee = () => {
 		setLoading(false)
 	}
 	
-	//ghetto solution to get the remove the loading bar. Will not remove it if zoomed out enough to not need scroll.
+	//weird solution to get the remove the loading bar. Will not remove it if zoomed out enough to not need scroll.
 	useEffect(()=>{
 		fetchTournaments();
 		window.addEventListener('scroll', unload);
@@ -98,6 +99,7 @@ const WhensMelee = () => {
 
 	return(
 		<Container maxWidth="lg" style={{backgroundColor: "FFDDCC", paddingBottom: "10px"}}>
+			<NavBar />
 			<br />
 			<h1 style={{textAlign: "center"}}>When's Melee?</h1>
 			<br />
