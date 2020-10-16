@@ -6,7 +6,10 @@ import DVD from './Pages/DVD'
 import ImgVids from './ImgVids/ImgVids';
 import WhensMelee from './WhensMelee/WhensMelee';
 import NavBar from './Components/NavBar';
+import Portfolio from './Pages/Portfolio/Portfolio';
 
+
+const reload = () => window.location.reload();
 const Main = () => {
   return (
     <Switch>
@@ -15,9 +18,13 @@ const Main = () => {
       <Route path='/dvd' component={DVD}/>
       <Route path='/imgvids' component={ImgVids}/>
       <Route path='/whensmelee' component={WhensMelee}/>
+      <Route path='/portfolio' component={Portfolio}/>
+      <Route path='/AlachuaCovidInfographic.html' onEnter={reload}/>
       <Route component={PageNotFound}/>
     </Switch>
   );
 }
+
+
 
 export default Main;
