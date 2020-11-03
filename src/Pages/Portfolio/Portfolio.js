@@ -12,6 +12,7 @@ const Portfolio = () => {
             </b></p>
             <ul>
                 <li>Here is an <a href="/AlachuaCovidInfographic.html">Infographic</a> that tracks COVID in Alachua County, based on a template</li>
+                <li>As a Photoshop assignment, I made a <a href="/TwitterBannerGraphic.png">Banner Graphic</a> for Twitter.</li>
                 <li>I also made three story maps based on assignments in the class:
                     <ul>
                         <li><a href="https://ufl.maps.arcgis.com/apps/Cascade/index.html?appid=41ea29e71c3c436cbc897c1ce6f47fe4">Cascade</a> for San Diego, CA</li>

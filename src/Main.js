@@ -20,6 +20,7 @@ const Main = () => {
       <Route path='/whensmelee' component={WhensMelee}/>
       <Route path='/portfolio' component={Portfolio}/>
       <Route path='/AlachuaCovidInfographic.html' onEnter={reload}/>
+      <Route path='/TwitterBannerGraphic.png' onEnter={reload}/>
       <Route component={PageNotFound}/>
     </Switch>
   );
