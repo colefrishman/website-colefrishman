@@ -7,6 +7,7 @@ import ImgVids from './ImgVids/ImgVids';
 import WhensMelee from './WhensMelee/WhensMelee';
 import NavBar from './Components/NavBar';
 import Portfolio from './Pages/Portfolio/Portfolio';
+import JewOnChristmas from './JewOnChristmas/JewOnChristmas';
 
 
 const reload = () => window.location.reload();
@@ -20,6 +21,8 @@ const Main = () => {
       <Route path='/whensmelee' component={WhensMelee}/>
       <Route path='/portfolio' component={Portfolio}/>
       <Route path='/AlachuaCovidInfographic.html' onEnter={reload}/>
+      <Route path='/jewonchristmas' component={JewOnChristmas}/>
+      <Route path='/jewonchristmas.html' component={JewOnChristmas}/>
       <Route path='/TwitterBannerGraphic.png' onEnter={reload}/>
       <Route component={PageNotFound}/>
     </Switch>
