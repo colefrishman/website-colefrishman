@@ -4,7 +4,6 @@ import { BrowserRouter } from 'react-router-dom';
 import './index.css';
 import Main from './Main';
 import * as serviceWorker from './serviceWorker';
-import DarkModeButton from './Utils/DarkMode'
 
 ReactDOM.render(
     <BrowserRouter>

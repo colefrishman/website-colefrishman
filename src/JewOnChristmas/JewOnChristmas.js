@@ -17,13 +17,19 @@ import TextField from '@material-ui/core/TextField';
 </form>*/
 
 const MapSearch = (props) => {
+
+	
 	let q = props.query.split(' ');
 	let search = q[0];
 
 	for (let i=1; i<q.length; ++i){
 		search = search + "+" + q[i]
 	}
-	console.log(search)
+
+	if(search.slice(-4) === "+in+"){
+		search += "New York City"; 
+	}
+
 	return(
 		<span>
 			<h2>{props.title}</h2>
@@ -39,20 +45,32 @@ const MapSearch = (props) => {
 	)
 }
 
-const JewOnChristmas = () => {
-	const [location, setLocation] = useState("");
+const TwoMaps = (props) => {
+	const location = props.location;
 
-    return(
-        <div>
-			<h1>A Jew On Christmas</h1>
-			<form className="form" noValidate autoComplete="off" >
-    			<TextField id="standard-basic" label="Location" onChange={(val) => {setLocation(val.target.value);console.log(val.target.value)}} />
-    		</form>
-			
-			<MapSearch id="chinesefood" query={`chinese food near ${location}`} title="Chinese Food"/>
-			<MapSearch id="movietheater" query={`movie theater near ${location}`} title="Movie Theaters"/>
-        </div>
-    );
+	return (
+		<>
+			<MapSearch id="chinesefood" query={`chinese food in ${location}`} title="Chinese Food"/>
+			<MapSearch id="movietheater" query={`movie theater in ${location}`} title="Movie Theaters"/>
+		</>
+	)
 }
 
-export default JewOnChristmas
+const JewOnChristmas = () => {
+	const [location, setLocation] = useState("");
+	//const [locationSet, setLocationSet] = useState(false);
+
+	const display = () => {
+    	return(
+    	    <center>
+				<h1>A Jew On Christmas</h1>
+   				<TextField id="standard-basic" label="Location" defaultValue="New York City" onChange={(val) => setLocation(val.target.value)} />
+				<TwoMaps location={location}/>
+    	    </center>
+		);
+	}
+	
+	return display()
+}
+
+export default JewOnChristmas;

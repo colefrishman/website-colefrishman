@@ -5,7 +5,6 @@ import Home from './Pages/Home'
 import DVD from './Pages/DVD'
 import ImgVids from './ImgVids/ImgVids';
 import WhensMelee from './WhensMelee/WhensMelee';
-import NavBar from './Components/NavBar';
 import Portfolio from './Pages/Portfolio/Portfolio';
 import JewOnChristmas from './JewOnChristmas/JewOnChristmas';
 
