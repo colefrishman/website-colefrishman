@@ -5,8 +5,9 @@ import Home from './Pages/Home'
 import DVD from './Pages/DVD'
 import ImgVids from './ImgVids/ImgVids';
 import WhensMelee from './WhensMelee/WhensMelee';
-import Portfolio from './Pages/Portfolio/Portfolio';
+import GIS3001 from './Pages/GIS3001';
 import JewOnChristmas from './JewOnChristmas/JewOnChristmas';
+import Football from './Pages/Football';
 
 
 const reload = () => window.location.reload();
@@ -18,11 +19,10 @@ const Main = () => {
       <Route path='/dvd' component={DVD}/>
       <Route path='/imgvids' component={ImgVids}/>
       <Route path='/whensmelee' component={WhensMelee}/>
-      <Route path='/portfolio' component={Portfolio}/>
+      <Route path='/gis3001' component={GIS3001}/>
+      <Route path='/football' component={Football}/>
       <Route path='/AlachuaCovidInfographic.html' onEnter={reload}/>
       <Route path='/jewonchristmas' component={JewOnChristmas}/>
-      <Route path='/jewonchristmas.html' component={JewOnChristmas}/>
-      <Route path='/TwitterBannerGraphic.png' onEnter={reload}/>
       <Route component={PageNotFound}/>
     </Switch>
   );
