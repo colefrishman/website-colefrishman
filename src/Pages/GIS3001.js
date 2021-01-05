@@ -1,9 +1,11 @@
 import React from 'react';
-import ImageLinkPreview from '../Components/ImageLinkPreview'
+import ImageLinkPreview from '../Components/ImageLinkPreview';
+import NavBar from '../Components/NavBar';
 
 const GIS3001 = () => {
     return(
         <div style={{marginRight: "10%", marginLeft: "10%", marginTop:"2%"}}>
+            <NavBar />
             <h1 style={{marginRight: "auto", marginLeft: "auto", textAlign: "center"}}>
                 GIS 3001C - Spatial Maps and Graphs
             </h1>
