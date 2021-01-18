@@ -19,7 +19,7 @@ const WhensMelee = () => {
 			videogameIds: [
 			  ${MELEE_ID}
 			],
-			afterDate: ${Math.floor((new Date().getTime())/1000-3600*24*1)},
+			afterDate: ${Math.floor((new Date().getTime())/1000-3600*24*0)},
 			beforeDate: ${Math.floor((new Date().getTime())/1000+3600*24*10)},
 			published: true
 		  }
@@ -28,10 +28,7 @@ const WhensMelee = () => {
 			  id
 			  name
 			  slug
-			  numAttendees
 			  startAt
-			  endAt
-			  state
 			  venueAddress
 			  hasOfflineEvents
 			  hasOnlineEvents
@@ -57,8 +54,6 @@ const WhensMelee = () => {
 			}
 		  }
 		}`;
-
-	  
 
 	//gets the tournaments from the API by the query
 	const fetchTournaments = () => {

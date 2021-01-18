@@ -1,8 +1,6 @@
 import React, {} from 'react';
 import Button from '@material-ui/core/Button';
-import ExpansionPanel from '@material-ui/core/ExpansionPanel';
-import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
-import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
+import {Accordion, AccordionSummary, AccordionDetails} from '@material-ui/core/';
 import ArrowDropDownCircleOutlinedIcon from '@material-ui/icons/ArrowDropDownCircleOutlined';
 import SvgIcon from '@material-ui/core/SvgIcon';
 import RoomIcon from '@material-ui/icons/Room';
@@ -16,7 +14,7 @@ const TournamentCard = (props) => {
 	let meleeAttendees = [];
 
 	//Adds a particpant to meleeAttendees if the player is registered for melee
-	if(tournament.participants.nodes){
+	if(tournament.participants && tournament.participants.nodes){
 		tournament.participants.nodes.forEach(participant => {
 			let meleePlayer = false;
 			if(participant.events){
@@ -116,23 +114,23 @@ const TournamentCard = (props) => {
 		}
 
 		return(
-			<ExpansionPanel>
-				<ExpansionPanelSummary expandIcon={<ArrowDropDownCircleOutlinedIcon />} >
+			<Accordion>
+				<AccordionSummary expandIcon={<ArrowDropDownCircleOutlinedIcon />} >
 					{getIconImage()}
 					<div style={{display: "block", marginLeft: "20px"}}>
 						<h3 style={{alignItems: "center"}}>{tournament.name}</h3>
 						<p>Starts: {(new Date(tournament.startAt*1000)).toString()}</p>
 					</div>
-				</ExpansionPanelSummary>
-				<ExpansionPanelDetails style={{display: "block"}}>
+				</AccordionSummary>
+				<AccordionDetails style={{display: "block"}}>
 					{getLocation()}
 					{getStreams()}
 					{getAttendeesCount()}
 					<p>{getAttendeeNames(10)}</p>
 					<Button href={`https://smash.gg/${tournament.slug}`} variant="contained" color="secondary">View on Smash.gg</Button>
 					<br />
-				</ExpansionPanelDetails>
-			</ExpansionPanel>
+				</AccordionDetails>
+			</Accordion>
 		)
 	}
 	else {
