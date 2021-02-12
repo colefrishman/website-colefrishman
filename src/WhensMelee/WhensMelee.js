@@ -12,13 +12,14 @@ const WhensMelee = () => {
 	//graphQL query, check https://smashgg-developer-portal.netlify.app/
 	let query = `query TournamentsByVideogame {
 		tournaments(query: {
-		  page: 1
-		  sortBy: "startAt asc"
-		  filter: {
-			past: false,
-			videogameIds: [
-			  ${MELEE_ID}
-			],
+			perPage: 20
+		  	page: 1
+		  	sortBy: "startAt asc"
+		  	filter: {
+				past: false,
+				videogameIds: [
+					${MELEE_ID}
+				],
 			afterDate: ${Math.floor((new Date().getTime())/1000-3600*24*0)},
 			beforeDate: ${Math.floor((new Date().getTime())/1000+3600*24*10)},
 			published: true
@@ -38,17 +39,16 @@ const WhensMelee = () => {
 			  }
 			  images{url}
 			  participants(query: {
-				
+				perPage:10
 			  }){
 				nodes{
-				  
-				  gamerTag
-				  events{
-					name
-					videogame{
-					  id
+					gamerTag
+					events{
+						name
+						videogame{
+						  id
+						}
 					}
-				  }
 				}
 			  }
 			}
