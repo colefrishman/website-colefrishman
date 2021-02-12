@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import Container from '@material-ui/core/Container';
 import CircularProgress from '@material-ui/core/CircularProgress';
-import TournamentsList from './TorunamentsList'
+import TournamentsList from './TournamentsList'
 import { MELEE_ID } from './values';
 import NavBar from '../Components/NavBar';
 
