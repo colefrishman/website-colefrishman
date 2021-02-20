@@ -1,4 +1,4 @@
-import { Button, Menu, MenuItem, Link } from "@material-ui/core"
+import { Button, Menu, MenuItem} from "@material-ui/core"
 import React, { useState } from 'react'
 import MenuIcon from '@material-ui/icons/Menu';
 
@@ -27,9 +27,9 @@ const NavBar = (props) => {
 			<MenuItem onClick={()=>{window.location="https://us-map-maker.herokuapp.com"}}>U.S. map maker</MenuItem>
 			<MenuItem onClick={()=>{window.location="/whensmelee"}}>When's Melee?</MenuItem>
 			<MenuItem onClick={()=>{window.location="/imgvids"}}>IMG #### video finder</MenuItem>
-			<MenuItem onClick={()=>{window.location="/football"}}>Football</MenuItem>
+			<MenuItem onClick={()=>{window.location="/sports"}}>Sports</MenuItem>
 			<MenuItem onClick={()=>{window.location="/gis3001"}}>GIS 3001</MenuItem>
-			<MenuItem onClick={()=>{window.location="/dvd"}}>DVD</MenuItem>
+			<MenuItem onClick={()=>{window.location="/dvd.html"}}>DVD</MenuItem>
 		</Menu>
 		<Button onClick={handleClick}><MenuIcon/>Navigate</Button>
 	</div>

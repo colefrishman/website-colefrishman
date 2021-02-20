@@ -39,7 +39,6 @@ const WhensMelee = () => {
 			  }
 			  images{url}
 			  participants(query: {
-				perPage:10
 			  }){
 				nodes{
 					gamerTag

@@ -9,7 +9,7 @@ const GIS3001 = () => {
             <h1 style={{marginRight: "auto", marginLeft: "auto", textAlign: "center"}}>
                 GIS 3001C - Spatial Maps and Graphs
             </h1>
-            <p><b>
+            <p id="design"><b>
                 Design
             </b></p>
             <ul>
@@ -18,7 +18,7 @@ const GIS3001 = () => {
                 <li><ImageLinkPreview src="/gis3001/Monogram.png" linktext="Monogram" height="200px" /></li>
                 <li><ImageLinkPreview src="/gis3001/PortfolioCover.png" linktext="Portfolio Cover" height="200px" /></li>
             </ul>
-            <p><b>
+            <p id="maps"><b>
                 Maps
             </b></p>
             <ul>

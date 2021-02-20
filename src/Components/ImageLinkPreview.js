@@ -1,6 +1,4 @@
 import React, {useState} from 'react';
-import ImageIcon from '@material-ui/icons/Image';
-import { PinDropSharp } from '@material-ui/icons';
 
 const ImageLinkPreview = (props) => {
 	const [visible, setVisibile] = useState(false)
