@@ -12,7 +12,7 @@ const WhensMelee = () => {
 	//graphQL query, check https://smashgg-developer-portal.netlify.app/
 	let query = `query TournamentsByVideogame {
 		tournaments(query: {
-			perPage: 20
+			perPage: 50
 		  	page: 1
 		  	sortBy: "startAt asc"
 		  	filter: {
@@ -20,7 +20,7 @@ const WhensMelee = () => {
 				videogameIds: [
 					${MELEE_ID}
 				],
-			afterDate: ${Math.floor((new Date().getTime())/1000-3600*24*0)},
+			afterDate: ${Math.floor((new Date().getTime())/1000-3600*24*1)},
 			beforeDate: ${Math.floor((new Date().getTime())/1000+3600*24*10)},
 			published: true
 		  }
@@ -30,6 +30,7 @@ const WhensMelee = () => {
 			  name
 			  slug
 			  startAt
+			  numAttendees
 			  venueAddress
 			  hasOfflineEvents
 			  hasOnlineEvents
@@ -38,18 +39,6 @@ const WhensMelee = () => {
 				streamName
 			  }
 			  images{url}
-			  participants(query: {
-			  }){
-				nodes{
-					gamerTag
-					events{
-						name
-						videogame{
-						  id
-						}
-					}
-				}
-			  }
 			}
 		  }
 		}`;
@@ -68,7 +57,7 @@ const WhensMelee = () => {
 			})
 		})
 		.then(r => r.json())
-		.then(result => {if(result.data){setTournamentsList(result.data.tournaments.nodes)}});
+		.then(result => {if(result.data){console.log(result);setTournamentsList(result.data.tournaments.nodes)}});
 	}
 
 	//Css style whether or not to show the loading thingy 

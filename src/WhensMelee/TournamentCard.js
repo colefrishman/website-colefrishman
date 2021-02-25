@@ -55,11 +55,11 @@ const TournamentCard = (props) => {
 		
 		//returns the number of attendees registered for at least one melee event
 		const getAttendeesCount = () => {
-			if(meleeAttendees.length>1){
-				return(<p>{meleeAttendees.length} attendees</p>);
+			if(tournament.numAttendees>1){
+				return(<p>{tournament.numAttendees} attendees</p>);
 			}
-			else if(meleeAttendees.length === 1){
-				return(<p>{meleeAttendees.length} attendee</p>);
+			else if(tournament.numAttendees == 1){
+				return(<p>1 attendee</p>);
 			}
 			else{
 				return '';
@@ -68,11 +68,13 @@ const TournamentCard = (props) => {
 
 		//Gets the first image for the torunament (if one exists)
 		const getIconImage = () => {
-			if(tournament.images[0]){
-				return(<Avatar variant="rounded" style={{height:"100px", width:"100px"}}><img src={tournament.images[0].url} alt={tournament.name} height="100px" width="100px"/></Avatar>);
-			}
-			else{
-				return <span style={{height:"100px", width:"100px"}}/>;
+			if(tournament.images){
+				if(tournament.images[0]){
+					return(<Avatar variant="rounded" style={{height:"100px", width:"100px"}}><img src={tournament.images[0].url} alt={tournament.name} height="100px" width="100px"/></Avatar>);
+				}
+				else{
+					return <span style={{height:"100px", width:"100px"}}/>;
+				}
 			}
 		}
 
@@ -126,8 +128,10 @@ const TournamentCard = (props) => {
 					{getLocation()}
 					{getStreams()}
 					{getAttendeesCount()}
-					<p>{getAttendeeNames(10)}</p>
-					<Button href={`https://smash.gg/${tournament.slug}`} variant="contained" color="secondary">View on Smash.gg</Button>
+					<p>{/*getAttendeeNames(10)*/}</p>
+					<Button style={{marginRight:"5px"}}href={`https://smash.gg/${tournament.slug}`} variant="contained" color="secondary">View on Smash.gg</Button>
+					<Button style={{marginRight:"5px"}}href={`https://smash.gg/${tournament.slug}/register`} variant="contained" color="primary">Register</Button>
+					<Button href={`https://smash.gg/${tournament.slug}/events`} variant="contained" color="default">View Schedule</Button>
 					<br />
 				</AccordionDetails>
 			</Accordion>
