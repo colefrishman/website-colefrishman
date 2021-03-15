@@ -58,7 +58,7 @@ const TournamentCard = (props) => {
 			if(tournament.numAttendees>1){
 				return(<p>{tournament.numAttendees} attendees</p>);
 			}
-			else if(tournament.numAttendees == 1){
+			else if(tournament.numAttendees === 1){
 				return(<p>1 attendee</p>);
 			}
 			else{
