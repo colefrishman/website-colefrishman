@@ -9,6 +9,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "../App.css"
+import { lightBlue } from '@material-ui/core/colors';
 
 const ContentCard = (props) => {
     const redir = (src) => {window.location=src}

@@ -98,13 +98,13 @@ const TournamentCard = (props) => {
 		const getLocation = () => {
 			let address = [];
 			if(tournament.hasOnlineEvents){
-				address.push(<LanguageIcon fontSize="inherit" htmlColor="darkblue" />, " Online");
+				address.push(<LanguageIcon fontSize="inherit" htmlColor="darkblue" key="online"/>, " Online");
 			}
 			if(tournament.hasOfflineEvents){
 				if(address.length>1){
 					address.push(", ")
 				}
-				address.push(<RoomIcon fontSize="inherit" htmlColor="darkgreen"/>);
+				address.push(<RoomIcon fontSize="inherit" htmlColor="darkgreen" key="location" />);
 			}
 			if(tournament.venueAddress){
 				if(address.length === 2){
@@ -120,18 +120,18 @@ const TournamentCard = (props) => {
 				<AccordionSummary expandIcon={<ArrowDropDownCircleOutlinedIcon />} >
 					{getIconImage()}
 					<div style={{display: "block", marginLeft: "20px"}}>
-						<h3 style={{alignItems: "center"}}>{tournament.name}</h3>
-						<p>Starts: {(new Date(tournament.startAt*1000)).toString()}</p>
+						<h3 style={{alignItems: "center", marginBlock: "0.5em"}}>{tournament.name}</h3>
+							<div>Starts: {(new Date(tournament.startAt*1000)).toString()}</div>
+							<div>{getLocation()}</div>
 					</div>
 				</AccordionSummary>
 				<AccordionDetails style={{display: "block"}}>
-					{getLocation()}
 					{getStreams()}
 					{getAttendeesCount()}
-					<p>{/*getAttendeeNames(10)*/}</p>
-					<Button style={{marginRight:"5px"}}href={`https://smash.gg/${tournament.slug}`} variant="contained" color="secondary">View on Smash.gg</Button>
-					<Button style={{marginRight:"5px"}}href={`https://smash.gg/${tournament.slug}/register`} variant="contained" color="primary">Register</Button>
-					<Button href={`https://smash.gg/${tournament.slug}/events`} variant="contained" color="default">View Schedule</Button>
+					{/*<p>{getAttendeeNames(10)}</p>*/}
+					<Button style={{marginRight:"5px"}}href={`https://start.gg/${tournament.slug}`} variant="contained" color="secondary">View on Start.gg</Button>
+					{tournament.isRegistrationOpen ? <Button style={{marginRight:"5px"}}href={`https://start.gg/${tournament.slug}/register`} variant="contained" color="primary">Register</Button> : <></>}
+					<Button href={`https://start.gg/${tournament.slug}/events`} variant="contained" color="default">View Schedule</Button>
 					<br />
 				</AccordionDetails>
 			</Accordion>

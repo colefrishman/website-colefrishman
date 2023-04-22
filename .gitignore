@@ -9,6 +9,7 @@ yarn.lock
 
 #firebase
 .firebase
+/.firebaserc
 .firebaserc
 
 # testing

@@ -4,6 +4,7 @@ import CircularProgress from '@material-ui/core/CircularProgress';
 import TournamentsList from './TournamentsList'
 import { MELEE_ID } from './values';
 import NavBar from '../Components/NavBar';
+import { Checkbox, FormControlLabel, Radio } from '@material-ui/core';
 
 const WhensMelee = () => {
 	const [tournamentsList, setTournamentsList] = useState([]);
@@ -12,7 +13,7 @@ const WhensMelee = () => {
 	//graphQL query, check https://smashgg-developer-portal.netlify.app/
 	let query = `query TournamentsByVideogame {
 		tournaments(query: {
-			perPage: 50
+			perPage: 200
 		  	page: 1
 		  	sortBy: "startAt asc"
 		  	filter: {
@@ -21,7 +22,7 @@ const WhensMelee = () => {
 					${MELEE_ID}
 				],
 			afterDate: ${Math.floor((new Date().getTime())/1000-3600*24*1)},
-			beforeDate: ${Math.floor((new Date().getTime())/1000+3600*24*10)},
+			beforeDate: ${Math.floor((new Date().getTime())/1000+3600*24*7)},
 			published: true
 		  }
 		}) {
@@ -34,6 +35,7 @@ const WhensMelee = () => {
 			  venueAddress
 			  hasOfflineEvents
 			  hasOnlineEvents
+			  isRegistrationOpen
 			  streams{
 				streamSource
 				streamName
@@ -45,7 +47,7 @@ const WhensMelee = () => {
 
 	//gets the tournaments from the API by the query
 	const fetchTournaments = () => {
-		fetch('https://api.smash.gg/gql/alpha', {
+		fetch('https://api.start.gg/gql/alpha', {
 			method: 'POST',
 			headers: {
 			  'Content-Type': 'application/json',
@@ -57,7 +59,7 @@ const WhensMelee = () => {
 			})
 		})
 		.then(r => r.json())
-		.then(result => {if(result.data){console.log(result);setTournamentsList(result.data.tournaments.nodes)}});
+		.then(result => {if(result.data){setTournamentsList(result.data.tournaments.nodes)}});
 	}
 
 	//Css style whether or not to show the loading thingy 
@@ -86,7 +88,7 @@ const WhensMelee = () => {
 			<br />
 			<h1 style={{textAlign: "center"}}>When's Melee?</h1>
 			<br />
-			<TournamentsList tournaments={tournamentsList}/>
+			<TournamentsList tournaments={tournamentsList} />
 			<CircularProgress color="secondary" style={{display: loadingStyle(loading), marginLeft: "auto", marginRight: "auto"}}/>
 		</Container>
 	);

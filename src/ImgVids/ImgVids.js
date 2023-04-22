@@ -24,7 +24,6 @@ const ImgVids = () => {
           "q": quer
         });
 
-        console.log(quer);
 
         request.execute(function (response){
             let results = response.result;
