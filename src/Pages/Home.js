@@ -55,7 +55,7 @@ const Home = () => {
 			<h3>Tools and Toys</h3>
 			<Slider {...sliderProps} style={{marginBottom:"100px"}}>
 				<ContentCard title="When's Melee?"		src="/whensmelee" 						image="/previews/whensmelee.png"	text="Find upcoming tournaments for Super Smash Bros. Melee" 			linktext="Go to page"/>
-				<ContentCard title="U.S. Map Maker"		src="https://us-map-maker.herokuapp.com"image="/previews/us-map-maker.png"	text="Make maps quickly and painlessly!" 								linktext="Go to page"/>
+				<ContentCard title="U.S. Map Maker"		src="https://us-map-maker.vercel.app/"  image="/previews/us-map-maker.png"	text="Make maps quickly and painlessly!" 								linktext="Go to page"/>
 				<ContentCard title="IMG #### Videos"	src="/imgvids" 							image="/previews/imgvids.png"		text="Looking for more great videos? Here's a neat trick for YouTube."	linktext="Go to page"/>
 				<ContentCard title="DVD" 				src="/dvd.html" 						image="/previews/dvd.png"			text="DVD Logo" 														linktext="Go to page"/>
 				<ContentCard title="A Jew On Christmas" src="/jewonchristmas" 					image="/previews/jewonchristmas.png"text="Find chinese restaurants and movie theaters near you!"			linktext="Go to page"/>

@@ -50,8 +50,8 @@ const TwoMaps = (props) => {
 
 	return (
 		<>
-			<MapSearch id="chinesefood" query={`chinese food in ${location}`} title="Chinese Food"/>
-			<MapSearch id="movietheater" query={`movie theater in ${location}`} title="Movie Theaters"/>
+			<MapSearch id="chinesefood" query={`chinese food in ${location} open christmas`} title="Chinese Food"/>
+			<MapSearch id="movietheater" query={`movie theater in ${location} open christmas`} title="Movie Theaters"/>
 		</>
 	)
 }

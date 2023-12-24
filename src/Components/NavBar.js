@@ -24,7 +24,7 @@ const NavBar = (props) => {
 			>
 
 			<MenuItem onClick={()=>{window.location="/home"}}>Home</MenuItem>
-			<MenuItem onClick={()=>{window.location="https://us-map-maker.herokuapp.com"}}>U.S. map maker</MenuItem>
+			<MenuItem onClick={()=>{window.location="https://us-map-maker.vercel.app/"}}>U.S. map maker</MenuItem>
 			<MenuItem onClick={()=>{window.location="/whensmelee"}}>When's Melee?</MenuItem>
 			<MenuItem onClick={()=>{window.location="/imgvids"}}>IMG #### video finder</MenuItem>
 			<MenuItem onClick={()=>{window.location="/sports"}}>Sports</MenuItem>
