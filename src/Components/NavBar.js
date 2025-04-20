@@ -27,8 +27,8 @@ const NavBar = (props) => {
 			<MenuItem onClick={()=>{window.location="https://us-map-maker.vercel.app/"}}>U.S. map maker</MenuItem>
 			<MenuItem onClick={()=>{window.location="/whensmelee"}}>When's Melee?</MenuItem>
 			<MenuItem onClick={()=>{window.location="/imgvids"}}>IMG #### video finder</MenuItem>
-			<MenuItem onClick={()=>{window.location="/sports"}}>Sports</MenuItem>
-			<MenuItem onClick={()=>{window.location="/gis3001"}}>GIS 3001</MenuItem>
+			<MenuItem onClick={()=>{window.location="/portfolio"}}>Design</MenuItem>
+			<MenuItem onClick={()=>{window.location="/contact"}}>Contact</MenuItem>
 			<MenuItem onClick={()=>{window.location="/dvd.html"}}>DVD</MenuItem>
 		</Menu>
 		<Button onClick={handleClick}><MenuIcon/>Navigate</Button>
